@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="beta.css">
+    
+    <script>
+        function updateInfo() {
+            const selectedOption = document.getElementById("rap").selectedOptions[0];
+            const price = selectedOption.dataset.price || "Chọn rạp để xem giá";
+            const imgSrc = selectedOption.dataset.img || "placeholder.png";
+
+            document.getElementById("ticketPrice").innerText = price;
+            document.getElementById("cinemaImage").src = imgSrc;
+        }
+
+        function redirectToPage() {
+            const url = document.getElementById("rap").selectedOptions[0].dataset.url;
+            if (url) window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="home.html" target="display"><img src="logo.jpg" alt="alphacinema" class="logo"></a>
+        <form>
+            <select id="rap" onchange="updateInfo()">
+                <option value="">Chọn rạp</option>
+                <optgroup label="Hà Nội">
+                    <option data-url="#" data-price="Giá vé rạp Đống Đa" data-img="img/dongda.jpg">Alpha Đống Đa</option>
+                    <option data-url="#" data-price="Giá vé rạp Cầu Giấy" data-img="img/caugiay.jpg">Alpha Cầu Giấy</option>
+                    <option data-url="#" data-price="Giá vé rạp Hà Đông" data-img="img/hadong.jpg">Alpha Hà Đông</option>
+                    <option data-url="#" data-price="Giá vé rạp Nguyễn Trãi" data-img="img/nguyentrai.jpg">Alpha Nguyễn Trãi</option>
+                </optgroup>
+                <optgroup label="TP Hồ Chí Minh">
+                    <option data-url="#" data-price="Giá vé rạp Trần Quang Khải" data-img="img/tranquangkhai.jpg">Alpha Trần Quang Khải</option>
+                    <option data-url="#" data-price="Giá vé rạp Phạm Ngũ Lão" data-img="img/phamngulao.jpg">Alpha Phạm Ngũ Lão</option>
+                    <option data-url="#" data-price="Giá vé rạp Quang Trung" data-img="img/quangtrung.jpg">Alpha Quang Trung</option>
+                </optgroup>
+            </select>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="lichchieu.html" target="display">LỊCH CHIẾU THEO RẠP</a></li>
+                <li><a href="phim.html" target="display">PHIM</a></li>
+                <li><a href="giave.html" target="display">GIÁ VÉ</a></li>
+                <li><a href="thanhvien.html" target="display">THÀNH VIÊN</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2 id="ticketPrice">Chọn rạp để xem giá</h2>
+        <img id="cinemaImage" src="placeholder.png" alt="Cinema Image" >
+        <div class="row">
+            <div id="BodyContent_ctl00_leftPanel" class="col-lg-16">
+                <div class="col-md-16 margin-bottom-35">
+                    <div class="fb-comments" data-href="#" data-numposts="5" data-width="auto" data-colorscheme="light"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div style="width: 100%; height: 373px;">
+            <iframe 
+                name="fb-comments" 
+                width="100%" 
+                height="373px" 
+                title="Facebook Comments" 
+                frameborder="0" 
+                allowtransparency="true" 
+                scrolling="no" 
+                allow="encrypted-media" 
+                src="https://web.facebook.com/v17.0/plugins/comments.php?app_id=367174740769877&channel=https://staticxx.facebook.com/x/connect/xd_arbiter/?version=46&domain=www.betacinemas.vn&origin=https://www.betacinemas.vn/&color_scheme=light&container_width=1000&height=373&href=https://betacinemas.vn/gia-ve/gia-ve-rap-beta-thai-nguyen.htm&locale=en_US&numposts=5&sdk=joey&version=v17.0"
+                style="border: none; width: 100%; height: 373px;">
+            </iframe>
+        </div>
+    </div>
+<footer>
+    
+    <div class="container">
+        <div class="row">
+            <!-- Left Column -->
+            <div class="col-md-3 col-sm-16 pre-footer-col">
+              <div class="ecm-panel">
+                <ul class="list-unstyled">
+                  <li>
+                    <a class="site-logo" href="/home.htm">
+                      <img style="width: 120px;" alt="Logo" src="logo.jpg">
+                    </a>
+                  </li>
+                  <!-- Links Section -->
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-3">Tuyển dụng</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-1">Giới thiệu</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-2">Liên hệ</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-4">F.A.Q</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/gioi-thieu/trach-nhiem-xa-hoi-va-cong-dong.htm">Hoạt động xã hội</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-7">Điều khoản sử dụng</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/dieu-khoan/dieu-khoan-thanh-toan.htm">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-8">Liên hệ quảng cáo</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-9">Điều khoản bảo mật</a></li>
+                  <li><i class="fa fa-angle-right"></i><a href="/dieu-khoan/huong-dan-dat-ve-online.htm">Hướng dẫn đặt vé online</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Center Column -->
+            <div class="col-md-8 col-sm-16 pre-footer-col">
+              <h2>CỤM RẠP ALPHA</h2>
+              <ul class="list-unstyled">
+                <li><i class="fa fa-angle-right"></i> <a href="/thong-tin-rap/beta-cinemas-vinh-yen-vinh-phuc.htm">Beta Cinemas Vĩnh Yên, Vĩnh Phúc - Sắp khai trương</a></li>
+                <li><i class="fa fa-angle-right"></i> <a href="/beta-cinemas-ung-van-khiem-sieu-pham-trong-thoi-gian-toi.htm">Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873</a></li>
+                <li><i class="fa fa-angle-right"></i> <a href="/thong-tin-rap/beta-lao-cai.htm">Beta Cinemas Lào Cai - Hotline 0358 968 970</a></li>
+                <!-- Add more locations here as needed -->
+                <li><i class="fa fa-angle-right"></i> <a href="http://onelink.to/zmb6dp">Tải Ứng Dụng Beta Cinemas</a></li>
+              </ul>
+            </div>
+            
+            <!-- Right Columns -->
+            <div class="col-md-4 col-sm-16 pre-footer-col">
+              <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+              <ul class="social-icons">
+                <li><a class="facebook" href="https://www.facebook.com/betacinemas/"></a></li>
+                <li><a class="youtube" href="https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw/"></a></li>
+                <li><a class="tiktok" href="https://www.tiktok.com/@beta_cinemas/"></a></li>
+                <li><a class="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
+              </ul>
+              <img style="width: 180px;" alt="Certified" src="dathongbao.png">
+            </div>
+            
+            <div class="col-md-4 col-sm-16 pre-footer-col">
+              <h2>LIÊN HỆ</h2>
+              <h4 class="no-margin">CÔNG TY CỔ PHẦN BETA MEDIA</h4>
+              <h6>Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội</h6>
+              <h6>Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, phường Giáp Bát, quận Hoàng Mai, thành phố Hà Nội</h6>
+              <h6>Hotline: 1900 636807 / 0934632682</h6>
+              <h6>Email: mkt@betacinemas.vn</h6>
+              <h4><strong>Liên hệ hợp tác kinh doanh:</strong></h4>
+              <h4>Hotline: 1800 646 420</h4>
+              <h4>Email: bachtx@betagroup.vn</h4>
+            </div>
+          </div>
+          
+    </div>
+</footer>    
+</body>
+</html>
+  

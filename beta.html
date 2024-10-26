@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="beta.css">
+    <title>Home</title>
+    <script>
+        function redirectToPage() {
+            var selectElement = document.getElementById("rap");
+            var selectedOption = selectElement.options[selectElement.selectedIndex]; 
+            var url = selectedOption.getAttribute("data-url");
+            if (url) {
+                window.location.href = url; 
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <a href="home.html" target="display">
+            <img src="logo.jpg" alt="alphacinema" class="logo">
+        </a>
+        <form>
+            <select name="Rap" id="rap" onchange="redirectToPage()">
+                <option value="">Chọn rạp</option>
+                <optgroup label="Hà Nội">
+                    <option data-url="#">Alpha Đống Đa</option>
+                    <option data-url="#">Alpha Cầu Giấy</option>
+                    <option data-url="#">Alpha Hà Đông</option>
+                    <option data-url="#">Alpha Nguyễn Trãi</option>
+                </optgroup>
+                <optgroup label="TP Hồ Chí Minh">
+                    <option data-url="#">Alpha Trần Quang Khải</option>
+                    <option data-url="#">Alpha Phạm Ngũ Lão</option>
+                    <option data-url="#">Alpha Quang Trung</option>
+                </optgroup>
+            </select>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="lichchieu.html" target="display">LỊCH CHIẾU THEO RẠP</a></li>
+                <li><a href="phim.html" target="display">PHIM</a></li>
+                <li><a href="giave.html" target="display">GIÁ VÉ</a></li>
+                <li><a href="thanhvien.html" target="display">THÀNH VIÊN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <!-- TABS -->
+        <div class="tab-style-1 margin-bottom-35">
+            <ul class="nav nav-tabs dayofweek" style="margin-bottom: 10px; margin-left: 1%; margin-right: 1%; margin-top: 20px;">
+                
+                <li class="in active">
+                    <a href="#299" name="firtTimeInSchedule" onclick="tabClick('299')" data-toggle="tab" class="dayofweek" id="299"><span class="font-38 font-s-35">25</span>/10 - T6</a>
+                </li>
+                
+                <li>
+                    <a href="#300" onclick="tabClick('300')" data-toggle="tab" class="dayofweek" id="300"><span class="font-38 font-s-35">26</span>/10 - T7</a>
+                </li>
+                
+                <li>
+                    <a href="#301" onclick="tabClick('301')" data-toggle="tab" class="dayofweek" id="301"><span class="font-38 font-s-35">27</span>/10 - CN</a>
+                </li>
+                
+                <li>
+                    <a href="#302" onclick="tabClick('302')" data-toggle="tab" class="dayofweek" id="302"><span class="font-38 font-s-35">28</span>/10 - T2</a>
+                </li>
+                
+                <li>
+                    <a href="#303" onclick="tabClick('303')" data-toggle="tab" class="dayofweek" id="303"><span class="font-38 font-s-35">29</span>/10 - T3</a>
+                </li>
+                
+                <!-- <ul class="nav-tabs">
+                    <li class="active"><a href="#tab-299">Venom: Kèo Cuối</a></li>
+                </ul>
+                 -->
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab-299">
+                    <div class="content-page">
+                        <div class="movie-info row">
+                            <div class="col-lg-2 col-md-2 col-sm-2">
+                                <div class="movie-poster">
+                                    <img src="c-13.png" class="rating-icon">
+                                    <img class="img-responsive border-radius-20" alt="Venom Poster" src="https://files.betacorp.vn/media/images/2024/09/19/screenshot-2024-09-19-150036-150139-190924-38.png">
+                                    <a href="#trailer-pop-up" class="trailer-play-btn"><i class="fa fa-play-circle"></i></a>
+                                </div>
+                            </div>
+            
+                            <div class="col-lg-11 col-md-11 col-sm-11">
+                                <h1><a href="/chi-tiet-phim.htm?gf=de8c271f-c6fb-4757-848b-823446c95765">Venom: Kèo Cuối</a></h1>
+                                <ul class="blog-info">
+                                    <li><i class="fa fa-tags"></i> Khoa học, viễn tưởng</li>
+                                    <li><i class="fa fa-clock-o"></i> 109 phút</li>
+                                </ul>
+                                <div class="showtimes">
+                                    <div class="showtime-item">
+                                        <a href="#product-pop-up" class="btn default show-in">11:30</a>
+                                        <span class="seats-left">113 ghế trống</span>
+                                    </div>
+                                    <div class="showtime-item">
+                                        <a href="#product-pop-up" class="btn default show-in">11:45</a>
+                                        <span class="seats-left">148 ghế trống</span>
+                                    </div>
+                                    <!-- Các showtimes khác -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+        <!-- END TABS -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="movie-details">
+            <img src="venom.png" alt="Venom: Kẻ Cuối" class="poster">
+            <h1>Venom: Kẻ Cuối</h1>
+            <p><span class="genre">Khoa học, viễn tưởng</span> | 109 phút</p>
+        </div>
+        <div class="showtimes">
+            <h2>2D Phụ Đề</h2>
+            <div class="showtime-slots">
+                <button class="showtime" data-seats="113">11:30 <span class="seats">113 ghế trống</span></button>
+                <button class="showtime" data-seats="148">11:45 <span class="seats">148 ghế trống</span></button>
+                <button class="showtime" data-seats="149">12:00 <span class="seats">149 ghế trống</span></button>
+                <!-- Repeat for all showtimes -->
+            </div>
+        </div>
+    </div>
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>BẠN ĐANG ĐẶT VÉ XEM PHIM</h2>
+            <h3>Venom: Kẻ Cuối</h3>
+            <div class="booking-info">
+                <div class="info-row">
+                    <span class="label">Rạp chiếu</span>
+                    <span id="theater">Beta Thanh Xuân</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Ngày chiếu</span>
+                    <span id="show-date">25/10/2024</span>
+                </div>
+                <div class="info-row">
+                    <span class="label">Giờ chiếu</span>
+                    <span id="show-time">11:45</span>
+                </div>
+            </div>
+            <button id="confirm-btn" class="confirm-button">ĐỒNG Ý</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

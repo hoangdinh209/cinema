@@ -1,0 +1,328 @@
+*{
+    box-sizing: border-box;
+}
+header {
+    font-family: "Open Sans", sans-serif;
+     display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    background-color: #fff; 
+    border-bottom: 2px solid #ccc;
+}
+
+
+.logo {
+    height: 60px;
+    width: auto;
+    margin-left: 100px;
+    border-radius: 10px;
+}
+
+form select {
+    font-size: 16px;
+    padding: 5px;
+    margin-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+nav ul { 
+    list-style: none; 
+    margin-right: 40px;
+    padding: 0;
+    margin-left: 40px;
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+}
+
+nav ul li {
+
+    display: inline;
+
+    float: left;
+}
+
+nav ul li a {
+    text-decoration: none; 
+    /* color: #000; */
+    /* font-weight: bold; */
+    font-size: 25px;
+    margin-right: 20px;
+    font-size: 20px;
+    color: #333;
+    display: block;
+    padding: 24px 12px 24px;
+    font-size: large;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #3e27bf; 
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    nav ul {
+         flex-direction: column; 
+    }
+    .logo{
+        margin-left: 10px;
+    }
+    form select{
+        margin-top: 20px;
+        margin-left: 0;
+    }
+    nav ul li {
+        margin-bottom: 10px;
+        margin: 0 0 0 10px;
+    }
+}
+select {
+    cursor: pointer; 
+}
+/* CSS cho tab */
+.nav-tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    /* display: flex; */
+}
+
+.nav-tabs li {
+   
+    margin-right: 10px;
+    display: inline;
+}
+
+.nav-tabs li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+}
+
+.nav-tabs li.active a {
+    background-color: #007bff;
+    color: white;
+}
+
+/* CSS cho nội dung tab */
+.tab-content {
+    margin-top: 20px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+/* CSS cho thông tin phim */
+.content-page {
+    padding: 0px;
+    border: 1px solid black;
+}
+
+
+.movie-info {
+    display: flex;
+    gap: -10px; /* Reduce gap to bring text closer */
+    align-items: center;
+}
+
+.movie-poster {
+    flex: 0 0 auto; /* Allows the poster to occupy only the space it needs */
+    /* display: flex; */
+    position: relative;
+    border: 1px solid black;
+    width:60% ;
+    height: auto;
+
+}
+
+.movie-poster img.rating-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+}
+
+.movie-poster .img-responsive {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.trailer-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+}
+
+/* CSS cho tiêu đề và thông tin phim */
+h1 a {
+    text-decoration: none;
+    color: #333;
+}
+
+.blog-info {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.blog-info li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* CSS cho suất chiếu */
+.showtimes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.showtime-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.showtime-item .btn {
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    color: #333;
+    transition: background-color 0.3s;
+}
+
+.showtime-item .btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.seats-left {
+    color: #888;
+}
+div.container{
+    margin: auto 40px ;
+}
+.container #cinemaImage{
+    width: 90%;
+     max-height: 90%; 
+     text-align: center;
+    margin: auto 40px;
+}
+
+
+/* footer */
+/* General styling for the container */
+.pre-footer-col {
+    padding: 20px;
+  }
+  
+  /* Left Column Styles */
+  .pre-footer-col:first-child {
+    border-right: 1px solid #ddd;
+  }
+footer div.row{
+    display: flex;
+    padding: 0 15px 22px;
+    box-sizing: border-box;
+}
+  ul.list-unstyled {
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  ul.list-unstyled li {
+    margin: 5px 0;
+    text-decoration: none;
+  }
+  
+  ul.list-unstyled li i {
+    margin-right: 10px;
+  }
+  
+  .site-logo img {
+    width: 120px;
+  }
+  
+  /* Center Column Styles */
+  h2 {
+    font-size: 20px;
+    border-bottom: 3px solid #1e73be;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+  
+  /* Social Media Icons */
+  .social-icons {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+  
+  img[alt="Certified"] {
+    margin-top: 15px;
+    width: 180px;
+  }
+  
+  /* Contact Information Styles */
+  .pre-footer-col:last-child h4 {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
+  .pre-footer-col:last-child h6 {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .no-margin {
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .pre-footer-col {
+      margin-bottom: 20px;
+    }
+  }
+  
