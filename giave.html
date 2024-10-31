@@ -15,7 +15,7 @@
         function updateInfo() {
             const selectedOption = document.getElementById("rap").selectedOptions[0];
             const price = selectedOption.dataset.price || "Chọn rạp để xem giá";
-            const imgSrc = selectedOption.dataset.img || "placeholder.png";
+            const imgSrc = selectedOption.dataset.img || "images/placeholder.png";
 
             document.getElementById("ticketPrice").innerText = price;
             document.getElementById("cinemaImage").src = imgSrc;
