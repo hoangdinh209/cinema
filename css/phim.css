@@ -1,0 +1,238 @@
+
+.tab-menu {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10px;
+    font-weight: normal;
+    font-size: 28px;
+}
+
+.tab-menu li {
+    margin: 0;
+}
+
+.tab-menu li a {
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease, color 0.3s ease;
+    color:#000;
+    background: none;
+}
+
+.tab-menu li a.active {
+    border-bottom: 3px solid #5097e3;
+    color: #1f62aa;
+}
+.tab-content {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tab-content.hidden {
+  display: none;
+}
+.movie-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem; 
+  justify-content: center;
+  background-color: #f3f1f1;
+}
+
+.movie-card {
+  display: flex;
+  flex-direction: column; /* Sắp xếp các phần tử theo chiều dọc */
+  justify-content: space-between;
+  width: 18%; 
+  background: #fff;
+  overflow: hidden;
+  text-align: center;
+  margin-bottom: 50px; /* Khoảng cách giữa các hàng phim */
+  background-color: #f3f1f1;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  margin-left: 30px;
+}
+.movie-card button{
+  width: 100%;
+  margin-top: auto;
+  background-color: #1e5692;
+  color: #fff;
+  height: 30px;
+  border:#5097e3 ;
+  font-size: large;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.movie-card button:hover{
+    background-color: #1e6bbe;
+  }
+
+.movie-card img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 30px;
+}
+.movie-card p {
+  min-height: 100px;
+  text-align: left;
+}
+.movie-card h3{
+  color: #065397;
+  text-align: left;
+}
+.movie-card .movie-info {
+  flex-grow: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  margin-bottom: 1px;
+}
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: auto; /* Thêm overflow để tránh tràn */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: 5% auto;
+  width: 90%;
+  max-width: 800px; /* Tăng độ rộng tối đa của modal */
+  position: relative;
+  text-align: left;
+  padding-top: 0px 15px 15px 15px;
+}
+
+/* Hiệu ứng fade-in cho modal */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.close {
+  position: absolute;
+  top: -10px;
+  right: 10px;
+  font-size: 30px; /* Tăng kích thước nút đóng */
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #000;
+}
+.modal-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd; /* Đường phân cách */
+  padding-bottom: 15px;
+
+}
+.model-movie-title {
+  font-size: 25px; /* Tăng kích thước tiêu đề */
+  margin: 5px; /* Xóa khoảng trống thừa */
+  border-bottom: 1px solid #ddd;
+  font-weight: normal;
+  padding: 5px;
+}
+.theater-name {
+  font-size: 32px; /* Tăng kích thước tên rạp */
+  color: #000000;
+  text-align: center;
+  padding: 0;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+
+.dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Tăng khoảng cách giữa các ngày */
+  justify-content: start; /* Căn đều từ đầu */
+  padding-bottom: 5px;
+  border-bottom: 1px solid #ddd;
+  padding-left: 10px;
+}
+
+.date {
+  font-size: 21px; /* Tăng kích thước văn bản của ngày */
+  padding: 10px 20px; /* Tăng padding để ngày lớn hơn */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid transparent;
+  background: none;
+}
+.date:hover {
+  background-color: #f0f0f0; /* Hiệu ứng khi di chuột */
+  transform: scale(1.05); /* Phóng to khi di chuột để người dùng dễ nhìn thấy */
+}
+
+.date.active {
+  color: rgb(25, 37, 138);
+  background: none;
+}
+.day.date{
+  font-weight: bolder;
+}
+.day-date {
+  font-size: 30px; 
+  font-weight: bold; 
+  margin-right: 5px; 
+  transform: scale(1, 1.5);
+}
+.day-prefix {
+  font-size: 15px; /* Giữ kích thước nhỏ hơn phần "Thứ" */
+}
+
+.showtimes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px; /* Tăng khoảng cách giữa các giờ chiếu */
+  margin-top: 20px;
+  padding-bottom: 150px;
+}
+
+.showtime {
+  background-color: #e3e3e3;
+  padding: 10px 10px; /* Tăng padding để các nút lớn hơn */
+  font-size: 10px; /* Tăng kích thước văn bản cho giờ chiếu */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin: 10px;
+  border: none;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.showtime:hover {
+  transform: scale(1.1); /* Phóng to khi di chuột để nhấn mạnh */
+}
+h3{
+  cursor: pointer;
+}
+h3:hover{
+  color: red;
+}
+
+

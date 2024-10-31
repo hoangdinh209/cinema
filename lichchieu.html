@@ -2,50 +2,491 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movie Ticket Booking</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <title>Lịch chiếu</title>
+    <link rel="stylesheet" href="css/beta.css">
+    <link rel="stylesheet" href="css/styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="shortcut icon" type="image/icon" href="img/icon.ico"/>
 
+</head>
+<script>
+    // Function to open the modal and set booking details
+function openModal(cinema, date, time, movieTitle) {
+    // Replace "caugiay" with "Alpha Cầu Giấy"
+    if (cinema === 'dongda') {
+        cinema = 'Alpha Đống Đa';
+    }
+    // Replace "caugiay" with "Alpha Cầu Giấy"
+    if (cinema === 'caugiay') {
+        cinema = 'Alpha Cầu Giấy';
+    }
+    // Replace "caugiay" with "Alpha Cầu Giấy"
+    if (cinema === 'hadong') {
+        cinema = 'Alpha Hà Đông';
+    }
+    if (cinema === 'nguyentrai') {
+        cinema = 'Alpha Nguyễn Trãi';
+    }
+    if (cinema === 'tranquangkhai') {
+        cinema = 'Alpha Trần Quang Khải';
+    }
+    if (cinema === 'phamngulao') {
+        cinema = 'Alpha Phạm Ngũ Lão';
+    }
+    if (cinema === 'quangtrung') {
+        cinema = 'Alpha Quang Trung';
+    }
+    // Set the modal details
+    document.getElementById('modalCinema').textContent = cinema;
+    document.getElementById('modalDate').textContent = date;
+    document.getElementById('modalTime').textContent = time;
+    document.getElementById('modalMovieTitle').textContent = movieTitle;
+    
+    // Show the modal
+    document.getElementById('bookingModal').style.display = 'block';
+}
+
+// Function to close the modal
+function closeModal() {
+    document.getElementById('bookingModal').style.display = 'none';
+}
+
+// Function to handle booking confirmation
+function confirmBooking() {
+    alert('Booking confirmed!');
+    closeModal();
+}
+
+// Optional: Close modal if user clicks outside of the modal content
+window.onclick = function(event) {
+    const modal = document.getElementById('bookingModal');
+    if (event.target === modal) {
+        closeModal();
+    }
+}
+
+// Define movie data for each cinema
+const cinemaMovies = {
+    dongda: [
+        // Add more movies here for Alpha Đống Đa...
+        {
+            name:"Thần dược",
+            title: "thanduoc",
+            genre: "Tâm lý, Kinh dị",
+            duration: "109 phút",
+            rating: "T18",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["55","93","34","76","22"]
+        },
+        {
+            name:"Red One: Mật Mã Đỏ",
+            title: "redone",
+            genre: "Hành động, Hài",
+            duration: "122 phút",
+            rating: "T13",
+            times: ["18:30", "19:00", "19:30", "20:00", ],
+            seta:[15,43,34,22]
+        },
+        {   name:"Venom: Kèo Cuối",
+            title: "venom1",
+            genre: "Khoa học, viễn tưởng",
+            duration: "109 phút",
+            rating: "T13",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["13","23","31","44","21"]
+        },
+        {
+            name:"Thiên Đường Quả Báo ",
+            title: "quabao",
+            genre: "Kịch, Hồi Hộp",
+            duration: "131 phút",
+            rating: "T16",
+            times: ["22:15", "22:45", "23:15", "23:50",],
+            seta:[45,13,34,54]
+        },
+        {
+            name:"Cô Dâu Hào Môn",
+            title: "codau",
+            genre: "Tâm lý",
+            duration: "114 phút",
+            rating: "T18",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:[55,93,34,76,22]
+        },
+    ],
+    caugiay: [
+        {
+            name: "Tee Yod: Quỷ Ăn Tạng Phần 2",
+            title: "quyantang",
+            genre: "Kinh dị",
+            duration: "111 phút",
+            rating: "T18",
+            times: ["19:00", "20:30", "21:00", "22:30", "23:00"],
+            seta:["55","93","34","76","22"]
+        },
+        // Add more movies here for Alpha Cầu Giấy...
+        {   name:"Venom: Kèo Cuối",
+            title: "venom1",
+            genre: "Khoa học, viễn tưởng",
+            duration: "109 phút",
+            rating: "T13",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["50","23","74","76","33"]
+        },
+        {   
+            name:"Ngày Xưa Có Một Chuyện Tình",
+            title: "chiatay",
+            genre: "Tình cảm, Lãng mạn",
+            duration: "98 phút",
+            rating: "T18",
+            times: ["19:00", "20:30", "21:00", "22:30", "23:00"],
+            seta:["75","33","34","90","36"]
+        }
+    ],
+    // Add movies for other cinemas...
+    hadong: [
+    {
+            name:"Thiên Đường Quả Báo ",
+            title: "quabao",
+            genre: "Kịch, Hồi Hộp",
+            duration: "131 phút",
+            rating: "T16",
+            times: ["22:15", "22:45", "23:15", "23:50",],
+            seta:[45,13,34,54]
+        },
+        {
+            name:"Elli Và Bí Ẩn Chiếc Tàu Ma ",
+            title: "elli",
+            genre: "Hoạt Hình",
+            duration: "131 phút",
+            rating: "T6",
+            times: ["19:15", "19:45", "20:15", "20:50",],
+            seta:[12,65,14,44]
+        },
+    {   
+        name:"Venom: Kèo Cuối",
+            title: "venom1",
+            genre: "Khoa học, viễn tưởng",
+            duration: "109 phút",
+            rating: "T13",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["55","93","34","76","22"]
+        }
+        // Add more movies here for Alpha Đống Đa...
+    ],
+    nguyentrai: [
+        {
+            name:"Ác Quỷ Truy Hồn ",
+            title: "acquy",
+            genre: "Kinh dị",
+            duration: "107 phút",
+            rating: "T18",
+            times: ["19:15", "19:45", "20:15", "20:50",],
+            seta:[12,65,14,44]
+        },
+        {
+            name: "Venom: Kèo Cuối",
+            title: "venom1",
+            genre: "Khoa học, viễn tưởng",
+            duration: "109 phút",
+            rating: "T13",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["55","93","34","76","22"]
+        },
+        {
+            name:"Elli Và Bí Ẩn Chiếc Tàu Ma ",
+            title: "elli",
+            genre: "Hoạt Hình",
+            duration: "131 phút",
+            rating: "T6",
+            times: ["19:15", "19:45", "20:15", "20:50",],
+            seta:[12,65,14,44]
+        },
+        // Add more movies here for Alpha Đống Đa...
+    ],
+    tranquangkhai: [
+    
+    {
+            name:"Elli Và Bí Ẩn Chiếc Tàu Ma ",
+            title: "elli",
+            genre: "Hoạt Hình",
+            duration: "131 phút",
+            rating: "T6",
+            times: ["19:15", "19:45", "20:15", "20:50",],
+            seta:[12,65,14,44]
+        },
+        {
+            name:"Thần dược",
+            title: "thanduoc",
+            genre: "Tâm lý, Kinh dị",
+            duration: "109 phút",
+            rating: "T18",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["55","93","34","76","22"]
+        },
+        {
+            name:"Venom: Kèo Cuối",
+            title: "venom1",
+            genre: "Khoa học, viễn tưởng",
+            duration: "109 phút",
+            rating: "T13",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["55","93","34","76","22"]
+        }
+        // Add more movies here for Alpha Đống Đa...
+    ],
+    phamngulao: [
+    {
+            name:"Elli Và Bí Ẩn Chiếc Tàu Ma ",
+            title: "elli",
+            genre: "Hoạt Hình",
+            duration: "131 phút",
+            rating: "T6",
+            times: ["19:15", "19:45", "20:15", "20:50",],
+            seta:[12,65,14,44]
+        },
+        {
+            name:"Thần dược",
+            title: "thanduoc",
+            genre: "Tâm lý, Kinh dị",
+            duration: "109 phút",
+            rating: "T18",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:["55","93","34","76","22"]
+        }
+        // Add more movies here for Alpha Đống Đa...
+    ],
+    quangtrung: [
+    {
+            name:"Thiên Đường Quả Báo ",
+            title: "quabao",
+            genre: "Kịch, Hồi Hộp",
+            duration: "131 phút",
+            rating: "T16",
+            times: ["22:15", "22:45", "23:15", "23:50",],
+            seta:[45,13,34,54]
+        },
+        {
+            name:"Venom: Kèo Cuối",
+            title: "venom1",
+            genre: "Khoa học, viễn tưởng",
+            duration: "109 phút",
+            rating: "T13",
+            times: ["20:30", "21:00", "21:30", "22:00", "22:30"],
+            seta:[55,93,34,76,22]
+        },
+        // Add more movies here for Alpha Đống Đa...
+    ],
+};
+
+// Update movie list based on selected cinema
+function updateMovieList() {
+    const selectedRap = document.getElementById('rap').selectedOptions[0].dataset.rap;
+    const movieContainer = document.getElementById('movieContainer');
+    
+    // Clear previous movie content
+    movieContainer.innerHTML = '';
+
+    // Check if the selected cinema has movies defined
+    if (cinemaMovies[selectedRap]) {
+        cinemaMovies[selectedRap].forEach(movie => {
+            const movieElement = `
+            <div class="movie-row">
+                <div class="poster">
+                    <img src="images/${movie.title.toLowerCase().replace(/ /g, '')}.png" alt="${movie.title} Poster">
+                    <span class="rating">${movie.rating}</span>
+                </div>
+                <div class="details">
+                    <h2><a href="#"  ">${movie.name}</a></h2>
+                    <ul class="movie-info">
+                        <li><i class="fa fa-tags"></i> ${movie.genre}</li>
+                        <li><i class="fa fa-clock-o"></i> ${movie.duration}</li>
+                    </ul>
+                    <div class="showtimes">
+                        <h3>2D Phụ đề</h3>
+                        <div class="time-grid">
+                            ${movie.times.map((time,index) => `
+                                <div class="time-slot">
+                                    <a href="javascript:void(0)" onclick="openModal('${selectedRap}', '27/10/2024', '${time}', '${movie.name}')">${time}</a>
+                                    <div>${movie.seta[index]} ghế trống</div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                </div>
+                </div>
+            `;
+            movieContainer.innerHTML += movieElement;
+        });
+    }
+}
+
+</script>
 <body>
+    <header>
+        <a href="home.html" target="display">
+            <img src="images/logo.jpg" alt="alphacinema" class="logo">
+        </a>
+        <form>
+            <select name="Rap" id="rap" onchange="updateMovieList()">
+                <option value="">Chọn rạp</option>
+                <optgroup label="Hà Nội">
+                    <option data-rap="dongda">Alpha Đống Đa</option>
+                    <option data-rap="caugiay">Alpha Cầu Giấy</option>
+                    <option data-rap="hadong">Alpha Hà Đông</option>
+                    <option data-rap="nguyentrai">Alpha Nguyễn Trãi</option>
+                </optgroup>
+                <optgroup label="TP Hồ Chí Minh">
+                    <option data-rap="tranquangkhai">Alpha Trần Quang Khải</option>
+                    <option data-rap="phamngulao">Alpha Phạm Ngũ Lão</option>
+                    <option data-rap="quangtrung">Alpha Quang Trung</option>
+                </optgroup>
+            </select>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="lichchieu.html" target="display">LỊCH CHIẾU THEO RẠP</a></li>
+                <li><a href="phim.html" target="display">PHIM</a></li>
+                <li><a href="giave.html" target="display">GIÁ VÉ</a></li>
+                <li><a href="thanhvien.html" target="display">THÀNH VIÊN</a></li>
+            </ul>
+        </nav>
+    </header>
     <div class="container">
-        <div class="movie-details">
-            <img src="venom.png" alt="Venom: Kẻ Cuối" class="poster">
-            <h1>Venom: Kẻ Cuối</h1>
-            <p><span class="genre">Khoa học, viễn tưởng</span> | 109 phút</p>
+        <div class="day">
+            <ul style="padding-left: 0;margin-top: 80px;display: flex;align-items: center;">
+                <li class=""><a href=""><span style="font-size: 35px;">27</span>/10-CN</a></li>
+                <li class=""><a href=""><span style="font-size: 35px;">28</span>/10-T2</a></li>
+                <li class=""><a href=""><span style="font-size: 35px;">29</span>/10-T3</a></li>
+                <li class=""><a href=""><span style="font-size: 35px;">30</span>/10-T4</a></li>
+                <p style="text-align: right;font-size: 25px;cursor: pointer;">||  CHỌN RẠP ĐỂ XEM NHIỀU PHIM KHÁC NHAU. <br></p>
+            </ul>
         </div>
-        <div class="showtimes">
-            <h2>2D Phụ Đề</h2>
-            <div class="showtime-slots">
-                <button class="showtime" data-seats="113">11:30 <span class="seats">113 ghế trống</span></button>
-                <button class="showtime" data-seats="148">11:45 <span class="seats">148 ghế trống</span></button>
-                <button class="showtime" data-seats="149">12:00 <span class="seats">149 ghế trống</span></button>
-                <!-- Repeat for all showtimes -->
-            </div>
-        </div>
-    </div>
-    <div id="booking-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>BẠN ĐANG ĐẶT VÉ XEM PHIM</h2>
-            <h3>Venom: Kẻ Cuối</h3>
-            <div class="booking-info">
-                <div class="info-row">
-                    <span class="label">Rạp chiếu</span>
-                    <span id="theater">Beta Thanh Xuân</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Ngày chiếu</span>
-                    <span id="show-date">25/10/2024</span>
-                </div>
-                <div class="info-row">
-                    <span class="label">Giờ chiếu</span>
-                    <span id="show-time">11:45</span>
+        <div class="content-page">
+            <div id="bookingModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <h2>Bạn đang đặt vé xem phim</h2>
+                    <h1 style="color: rgb(77, 77, 156); text-align: center;" id="modalMovieTitle">Venom: Kèo Cuối</h1>
+                    <div class="modal-info">
+                        <div class="info-row">
+                            <div>Rạp chiếu</div>
+                            <div id="modalCinema">Beta Thanh Xuân</div>
+                        </div>
+                        <div class="info-row">
+                            <div>Ngày chiếu</div>
+                            <div id="modalDate">27/10/2024</div>
+                        </div>
+                        <div class="info-row">
+                            <div>Giờ chiếu</div>
+                            <div id="modalTime">20:30</div>
+                        </div>
+                    </div>
+                    <button class="confirm-btn" onclick="confirmBooking()">Đồng ý</button>
                 </div>
             </div>
-            <button id="confirm-btn" class="confirm-button">ĐỒNG Ý</button>
         </div>
+        <div id="movieContainer" class="movie-container">
+            <div class="movie-row">
+                <div class="poster">
+                    <img src="images/venom1.png" alt="Venom Poster">
+                    <span class="rating">T13</span>
+                </div>
+                <div class="details">
+                    <h2><a href="#" >Venom: Kèo Cuối</a></h2>
+                    <ul class="movie-info">
+                        <li><i class="fa fa-tags"></i> Khoa học, viễn tưởng</li>
+                        <li><i class="fa fa-clock-o"></i> 109 phút</li>
+                    </ul>
+                    <div class="showtimes">
+                        <h3>2D Phụ đề</h3>
+                        <div class="time-grid">
+                            <div class="time-slot">
+                                <a href="javascript:void(0)" onclick="openModal('Beta Thanh Xuân', '27/10/2024', '20:30', 'Venom: Kèo Cuối')">20:30</a>
+                                <div>55 ghế trống</div>
+                            </div>
+                            <div class="time-slot">
+                                <a href="javascript:void(0)" onclick="openModal('Beta Thanh Xuân', '27/10/2024', '21:00', 'Venom: Kèo Cuối')">21:00</a>
+                                <div>67 ghế trống</div>
+                            </div>
+                            <div class="time-slot">
+                                <a href="javascript:void(0)" onclick="openModal('Beta Thanh Xuân', '27/10/2024', '21:30', 'Venom: Kèo Cuối')">21:30</a>
+                                <div>77 ghế trống</div>
+                            </div>
+                            <div class="time-slot">
+                                <a href="javascript:void(0)" onclick="openModal('Beta Thanh Xuân', '27/10/2024', '22:00', 'Venom: Kèo Cuối')">22:00</a>
+                                <div>102 ghế trống</div>
+                            </div>
+                            <div class="time-slot">
+                                <a href="javascript:void(0)" onclick="openModal('Beta Thanh Xuân', '27/10/2024', '22:30', 'Venom: Kèo Cuối')">22:30</a>
+                                <div>99 ghế trống</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+           
+                
     </div>
     
-    <script src="script.js"></script>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="images/logo.jpg" alt="Alpha Cinemas" class="footer-logo">
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">F.A.Q</a></li>
+                    <li><a href="#">Hoạt động xã hội</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
+                    <li><a href="#">Liên hệ quảng cáo</a></li>
+                    <li><a href="#">Điều khoản bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>CỤM RẠP ALPHA</h2>
+                <ul>
+                    <li><a href="#">Alpha Cinema Ân Thi, Hưng Yên - Sắp khai trương</a></li>
+                    <li><a href="#">Alpha Cinema Đống Đa, Hà Nội - Hotline 0969 874 873</a></li>
+                    <li><a href="#">Alpha Cinema Nguyễn Trãi, Hà Nội - Hotline 0358 968 970</a></li>
+                    <li><a href="#">Alpha Cinema Cầu Giấy, Hà Nội - Hotline 1900 638 362</a></li>
+                    <li><a href="#">Alpha Cinema Hà Đông, Hà Nội - Hotline 0983 474 440</a></li>
+                    <li><a href="#">Alpha Cinema Phạm Ngũ Lão, TP Hồ Chí Minh - Hotline 0983 747 173</a></li>
+                    <li><a href="#">Alpha Cinema Quang Trung, TP Hồ Chí Minh - Hotline 0983 019 8792</a></li>
+                    <li><a href="#">Alpha Cinema Trần Quang Khải, TP Hồ Chí Minh - Hotline 0983 836 827</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+                <ul class="social-icons">
+                  <li><a class="facebook" href="https://www.facebook.com/betacinemas/"></a></li>
+                  <li><a class="youtube" href="https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw/"></a></li>
+                  <li><a class="tiktok" href="https://www.tiktok.com/@beta_cinemas/"></a></li>
+                  <li><a class="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
+                </ul>
+                <img style="width: 180px;" alt="Certified" src="images/dathongbao.png">
+            </div>
+            <div class="footer-section">
+                <h2>LIÊN HỆ</h2>
+                  <h4 class="no-margin" style="">CÔNG TY CỔ PHẦN BETA MEDIA</h4>
+                  <h6>Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội</h6>
+                  <h6>Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, phường Giáp Bát, quận Hoàng Mai, thành phố Hà Nội</h6>
+                  <h6>Hotline: 1900 636807 / 0934632682</h6>
+                  <h6>Email: mkt@betacinemas.vn</h6>
+                  <h4><strong>Liên hệ hợp tác kinh doanh:</strong></h4>
+                  <h4>Hotline: 1800 646 420</h4>
+                  <h4>Email: bachtx@betagroup.vn</h4>
+            </div>
+        </footer>
+        <footer class="footer2">
+            <p>&copy; 2024 DINH VAN VIET HOANG. MSV:232631003</p>
+        </footer>
+    
 </body>
 </html>

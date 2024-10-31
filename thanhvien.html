@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thành Viên</title>
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+<link rel="shortcut icon" type="image/icon" href="img/icon.ico"/>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<style>
+  
+.form-container {
+    max-width: 500px;
+    margin: 0 auto; /* Giảm khoảng cách giữa form và nút điều khiển */
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-top: none; /* Loại bỏ viền trên để form dính vào nút điều khiển */
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+        
+        .form-container.hidden {
+            display: none;
+        }
+        .form-toggle {
+    display: flex;
+    justify-content: space-between; /* Đảm bảo các nút đặt cạnh nhau */
+    width: 500px; /* Đặt chiều rộng bằng với form */
+    margin: 0 auto; /* Đặt căn giữa cho toggle */
+    gap: 0; /* Không có khoảng cách giữa các nút */
+    margin-bottom: 0; /* Đưa form sát vào phần nút điều khiển */
+    margin-top: 120px;
+    background-color: none;
+        }
+        .form-toggle button {
+    width: 50%; /* Mỗi nút chiếm 50% chiều rộng của container */
+    padding: 0.5rem 0; /* Điều chỉnh padding cho phù hợp */
+    border: 1px solid #f1f3f4; /* Thêm viền vào các nút */
+    cursor: pointer;
+    color: white;
+    border-radius: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.form-toggle button.active {
+    background-color: #162289;
+    border-right: 1px solid #f1f3f4; /* Giữ viền phải cho nút được chọn */
+}
+        .form-toggle button:not(.active) {
+            color: #101010;
+            border: 1px solid #f1f3f4;
+        }
+        .form-toggle button:hover {
+            opacity: 0.8;
+        }
+        button[type="submit"], button[type="button"] {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #ff4500;
+            color: white;
+        }
+        button[type="button"] {
+            background-color: #3b5998;
+            color: white;
+        }
+        button[type="submit"]:hover, button[type="button"]:hover {
+            opacity: 0.9;
+        }
+        .form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="password"],
+.form-container input[type="tel"],
+.form-container input[type="date"],
+.form-container select {
+    width: 100%; /* Đặt chiều rộng của các ô điền bằng 100% form container */
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box; /* Đảm bảo viền không làm thay đổi chiều rộng */
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+</style>
+<body>
+    <header>
+        <a href="home.html" target="display">
+            <img src="images/logo.jpg" alt="alphacinema" class="logo">
+        </a>
+        <form>
+            <select name="Rap" id="rap" onchange="updateMovieList()">
+                <option value="">Chọn rạp</option>
+                <optgroup label="Hà Nội">
+                    <option data-rap="dongda">Alpha Đống Đa</option>
+                    <option data-rap="caugiay">Alpha Cầu Giấy</option>
+                    <option data-rap="hadong">Alpha Hà Đông</option>
+                    <option data-rap="nguyentrai">Alpha Nguyễn Trãi</option>
+                </optgroup>
+                <optgroup label="TP Hồ Chí Minh">
+                    <option data-rap="tranquangkhai">Alpha Trần Quang Khải</option>
+                    <option data-rap="phamngulao">Alpha Phạm Ngũ Lão</option>
+                    <option data-rap="quangtrung">Alpha Quang Trung</option>
+                </optgroup>
+            </select>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="lichchieu.html" target="display">LỊCH CHIẾU THEO RẠP</a></li>
+                <li><a href="phim.html" target="display">PHIM</a></li>
+                <li><a href="giave.html" target="display">GIÁ VÉ</a></li>
+                <li><a href="thanhvien.html" target="display">THÀNH VIÊN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="form-toggle">
+      <button id="loginButton" class="active" onclick="toggleForm('login')">Đăng Nhập</button>
+      <button id="registerButton" onclick="toggleForm('register')">Đăng Ký</button>
+  </div>
+
+  <div id="loginForm" class="form-container">
+    <h2>Đăng Nhập</h2>
+    <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br><br>
+        <label for="password">Mật Khẩu:</label>
+        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu của bạn" required><br><br>
+        
+        <button type="submit" style="background-color: #ff4500; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer;">Đăng Nhập Bằng Tài Khoản</button>
+        <button type="button" style="background-color: #3b5998; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer;">Đăng Nhập Bằng Facebook</button>
+    </form>
+</div>
+
+<div id="registerForm" class="form-container hidden">
+    <h2>Đăng Ký</h2>
+    <form>
+        <label for="fullname">Họ Tên:</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Nhập họ tên của bạn" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" required><br><br>
+        <label for="password">Mật Khẩu:</label>
+        <input type="password" id="password" name="password" placeholder="Nhập mật khẩu của bạn" required><br><br>
+        <label for="confirmPassword">Xác Nhận Lại Mật Khẩu:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Xác nhận mật khẩu của bạn" required><br><br>
+        <label for="birthdate">Ngày Sinh:</label>
+        <input type="date" id="birthdate" name="birthdate" required><br><br>
+        <label for="phone">Số Điện Thoại:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn" required><br><br>
+        
+        <input type="checkbox" id="terms" name="terms" required>
+        <label for="terms">Tôi cam kết tuân theo <a href="#">chính sách bảo mật</a> và <a href="#">điều khoản sử dụng</a> của BetaCinemas.</label><br><br>
+        <button type="submit" style="background-color: #ff4500; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer;">Đăng Ký</button>
+        <button type="button" style="background-color: #3b5998; color: white; padding: 0.5rem 1rem; border: none; cursor: pointer;">Tiếp Tục Với Facebook</button>
+    </form>
+</div>
+
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="images/logo.jpg" alt="Alpha Cinemas" class="footer-logo">
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">F.A.Q</a></li>
+                    <li><a href="#">Hoạt động xã hội</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
+                    <li><a href="#">Liên hệ quảng cáo</a></li>
+                    <li><a href="#">Điều khoản bảo mật</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>CỤM RẠP ALPHA</h2>
+                <ul>
+                    <li><a href="#">Alpha Cinema Ân Thi, Hưng Yên - Sắp khai trương</a></li>
+                    <li><a href="#">Alpha Cinema Đống Đa, Hà Nội - Hotline 0969 874 873</a></li>
+                    <li><a href="#">Alpha Cinema Nguyễn Trãi, Hà Nội - Hotline 0358 968 970</a></li>
+                    <li><a href="#">Alpha Cinema Cầu Giấy, Hà Nội - Hotline 1900 638 362</a></li>
+                    <li><a href="#">Alpha Cinema Hà Đông, Hà Nội - Hotline 0983 474 440</a></li>
+                    <li><a href="#">Alpha Cinema Phạm Ngũ Lão, TP Hồ Chí Minh - Hotline 0983 747 173</a></li>
+                    <li><a href="#">Alpha Cinema Quang Trung, TP Hồ Chí Minh - Hotline 0983 019 8792</a></li>
+                    <li><a href="#">Alpha Cinema Trần Quang Khải, TP Hồ Chí Minh - Hotline 0983 836 827</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+                <ul class="social-icons">
+                  <li><a class="facebook" href="#">Facebook</a></li>
+                  <li><a class="youtube" href="#">YouTube</a></li>
+                  <li><a class="zalo" href="#">Zalo</a></li>
+                  <li><a class="instagram" href="#">Instagram</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>LIÊN HỆ</h2>
+                  <h4 class="no-margin">CÔNG TY CỔ PHẦN BETA MEDIA</h4>
+                  <h6>Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội</h6>
+                  <h6>Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, phường Giáp Bát, quận Hoàng Mai, thành phố Hà Nội</h6>
+                  <h6>Hotline: 1900 636807 / 0934632682</h6>
+                  <h6>Email: mkt@betacinemas.vn</h6>
+                  <h4><strong>Liên hệ hợp tác kinh doanh:</strong></h4>
+                  <h4>Hotline: 1800 646 420</h4>
+                  <h4>Email: bachtx@betagroup.vn</h4>
+            </div>
+    </footer>
+    <script>
+      function toggleForm(formType) {
+          const loginForm = document.getElementById('loginForm');
+          const registerForm = document.getElementById('registerForm');
+          const loginButton = document.getElementById('loginButton');
+          const registerButton = document.getElementById('registerButton');
+
+          if (formType === 'login') {
+              loginForm.classList.remove('hidden');
+              registerForm.classList.add('hidden');
+              loginButton.classList.add('active');
+              registerButton.classList.remove('active');
+          } else {
+              loginForm.classList.add('hidden');
+              registerForm.classList.remove('hidden');
+              loginButton.classList.remove('active');
+              registerButton.classList.add('active');
+          }
+      }
+  </script>
+  <footer class="footer2">
+    <p>&copy; 2024 BUI TRONG DAT. MSV:232630981 || DINH VAN VIET HOANG MSV:232631003</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/phim.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Phim</title>
+<link rel="shortcut icon" type="image/icon" href="img/icon.ico"/>
+
+</head>
+<body>
+    <header>
+        <a href="home.html" target="display">
+            <img src="images/logo.jpg" alt="alphacinema" class="logo">
+        </a>
+        <form>
+            <select name="Rap" id="rap" onchange="redirectToPage()">
+                <option value="">Chọn rạp</option>
+                <optgroup label="Hà Nội">
+                    <option data-url="#">Alpha Đống Đa</option>
+                    <option data-url="#">Alpha Cầu Giấy</option>
+                    <option data-url="#">Alpha Hà Đông</option>
+                    <option data-url="#">Alpha Nguyễn Trãi</option>
+                </optgroup>
+                <optgroup label="TP Hồ Chí Minh">
+                    <option data-url="#">Alpha Trần Quang Khải</option>
+                    <option data-url="#">Alpha Phạm Ngũ Lão</option>
+                    <option data-url="#">Alpha Quang Trung</option>
+                </optgroup>
+            </select>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="lichchieu.html">LỊCH CHIẾU THEO RẠP</a></li>
+                <li><a href="phim.html" >PHIM</a></li>
+                <li><a href="giave.html" >GIÁ VÉ</a></li>
+                <li><a href="thanhvien.html">THÀNH VIÊN</a></li>
+            </ul>
+        </nav>
+    </header>
+    <h2>
+        <ol class="tab-menu" style="margin-top: 100px;">
+            <li><a href='#phim-sap-chieu' >PHIM SẮP CHIẾU</a></li>
+            <li><a href='#phim-dang-chieu' class="active">PHIM ĐANG CHIẾU</a></li>
+            <li><a href='#suat-chieu-dac-biet'>SUẤT CHIẾU ĐẶC BIỆT</a></li>
+        </ol>
+    </h2>
+    <section id="phim-sap-chieu" class="tab-content hidden">
+      <div class="movie-row">
+      <div class="movie-card">
+          <img src="cinema/sc1.png" alt="Phim 1">
+          <h3>Heretic</h3>
+          <p><b>Thể loại:</b> Kinh dị<br>
+            <b>Thời lượng:</b> 110 phút<br>
+            <b>Ngày khởi chiếu:</b> 29/11/2024</p>
+      </div>
+      <div class="movie-card">
+        <img src="cinema/sc2.png" alt="Phim 1">
+        <h3>Hành trình của Moana</h3>
+        <p><b>Thể loại:</b> Kinh dị<br>
+          <b>Thời lượng:</b> 110 phút<br>
+          <b>Ngày khởi chiếu:</b> 29/11/2024</p>
+    </div>
+    <div class="movie-card">
+      <img src="cinema/sc3.png" alt="Phim 1">
+      <h3>Cuộc chiến của Rohirrim</h3>
+      <p><b>Thể loại:</b> Hành động, Thần thoại<br>
+        <b>Thời lượng:</b> 130 phút<br>
+        <b>Ngày khởi chiếu:</b> 13/12/2024
+        </p>
+  </div>
+  <div class="movie-card">
+    <img src="cinema/sc4.png" alt="Phim 1">
+    <h3>Học Viện Anh Hùng: You're Next</h3>
+    <p><b>Thể loại:</b> Hoạt hình<br>
+      <b>Thời lượng:</b> 110 phút<br>
+      <b>Ngày khởi chiếu:</b> 08/11/2024</p>
+</div>
+<div class="movie-card">
+  <img src="cinema/sc5.png" alt="Phim 1">
+  <h3>Red One: Mật Mã Đỏ</h3>
+  <p><b>Thể loại:</b> Hài hước, Hành động<br>
+    <b>Thời lượng:</b> 123 phút<br>
+    <b>Ngày khởi chiếu:</b> 08/11/2024</p>
+</div>
+<div class="movie-card">
+  <img src="cinema/sc6.png" alt="Phim 1">
+  <h3>Cu Li Không Bao Giờ Khóc</h3>
+  <p><b>Thể loại:</b> Kịch<br>
+    <b>Thời lượng:</b> 93 phút<br>
+    <b>Ngày khởi chiếu:</b> 15/11/2024</p>
+</div>
+<div class="movie-card">
+  <img src="cinema/sc7.png" alt="Phim 1">
+  <h3>Linh Miêu: Quỷ Nhập Tràng</h3>
+  <p><b>Thể loại:</b> Kinh dị<br>
+    <b>Thời lượng:</b> 110 phút<br>
+    <b>Ngày khởi chiếu:</b> 22/11/2024</p>
+</div>
+<div class="movie-card">
+  <img src="cinema/sc8.png" alt="Phim 1">
+  <h3>Công Tử Bạc Liêu</h3>
+  <p><b>Thể loại:</b> Tâm lý, Hài hước<br>
+    <b>Thời lượng:</b> 100 phút<br>
+    <b>Ngày khởi chiếu:</b> 06/12/2024</p>
+</div>
+<div class="movie-card">
+  <img src="cinema/sc9.png" alt="Phim 1">
+  <h3>Kang Mak</h3>
+  <p><b>Thể loại:</b> Hài hước, Kinh dị<br>
+    <b>Thời lượng:</b> 100 phút<br>
+    <b>Ngày khởi chiếu:</b> 29/11/2024
+    </p>
+</div>
+</div>
+    </section>
+<section id="phim-dang-chieu" class="tab-content ">
+  <div class="movie-row">
+  <div class="movie-card">
+      <img src="cinema/dc1.png" alt="Phim 1">
+      <h3>Ác Quỷ Truy Hồn</h3>
+      <div class="movie-info">
+      <p><b>Thể loại:</b> Kinh dị<br>
+        <b>Thời lượng:</b> 70 phút<br>
+      </p>
+      </div>
+      <button>MUA VÉ</button>
+  </div>
+  <div class="movie-card">
+    <img src="cinema/dc2.png" alt="Phim 1">
+    <h3>Elli Và Bí Ẩn Chiếc Tàu Ma</h3>
+    <div class="movie-info">
+    <p><b>Thể loại:</b> Gia đình, Hoạt hình <br>
+      <b>Thời lượng:</b> 110 phút<br>
+    </p>
+    </div>
+      <button>MUA VÉ</button>
+</div>
+<div class="movie-card">
+  <img src="cinema/dc3.png" alt="Phim 1">
+  <h3>Ngày Xưa Có Một Chuyện Tình</h3>
+  <div class="movie-info">
+  <p><b>Thể loại:</b> Tình cảm<br>
+    <b>Thời lượng:</b> 130 phút<br>
+    </p>
+  </div>
+    <button>MUA VÉ</button>
+</div>
+<div class="movie-card">
+<img src="cinema/dc4.png" alt="Phim 1">
+<h3>Venom: Kèo Cuối</h3>
+<div class="movie-info">
+<p><b>Thể loại:</b> Khoa học, Viễn tưởng<br>
+  <b>Thời lượng:</b> 110 phút<br>
+  </p>
+</div>
+  <button>MUA VÉ</button>
+</div>
+<div class="movie-card">
+<img src="cinema/dc5.png" alt="Phim 1">
+<h3>Thần Dược</h3>
+<div class="movie-info">
+<p><b>Thể loại:</b> Kinh dị, Tâm lý<br>
+<b>Thời lượng:</b> 123 phút<br>
+</p>
+</div>
+<button>MUA VÉ</button>
+</div>
+<div class="movie-card">
+<img src="cinema/dc6.png" alt="Phim 1">
+<h3>Cô Dâu Hào Môn</h3>
+<div class="movie-info">
+<p><b>Thể loại:</b> Tâm lý<br>
+<b>Thời lượng:</b> 93 phút<br>
+</p>
+</div>
+<button>MUA VÉ</button>
+</div>
+<div class="movie-card">
+<img src="cinema/dc7.jpg" alt="Phim 1">
+<h3>Thiên Đường Quả Báo</h3>
+<div class="movie-info">
+<p><b>Thể loại:</b> Kinh dị<br>
+<b>Thời lượng:</b> 110 phút<br>
+</p>
+</div>
+<button>MUA VÉ</button>
+</div>
+    </section>
+    <section id="suat-chieu-dac-biet" class="tab-content hidden">
+      <div class="movie-row">
+      <div class="movie-card">
+          <img src="cinema/dc1.png" alt="Phim 1">
+          <h3>Ác quỷ truy hồn</h3>
+          <p><b>Thể loại:</b> Kinh dị<br>
+            <b>Thời lượng:</b> 70 phút<br>
+            </p>
+            <button>MUA VÉ</button>
+      </div>
+      <div class="movie-card">
+        <img src="cinema/dc2.png" alt="Phim 1">
+        <h3>Elli Và Bí Ẩn Chiếc Tàu Ma</h3>
+        <p><b>Thể loại:</b> Gia đình, Hoạt hình<br>
+          <b>Thời lượng:</b> 110 phút<br>
+        </p>
+          <button>MUA VÉ</button>
+    </div>
+    <div class="movie-card">
+      <img src="cinema/dc3.png" alt="Phim 1">
+      <h3>Ngày Xưa Có Một Chuyện Tình</h3>
+      <p><b>Thể loại:</b> Tình cảm<br>
+        <b>Thời lượng:</b> 130 phút<br>
+        </p>
+        <button>MUA VÉ</button>
+  </div>
+  <div class="movie-card">
+    <img src="cinema/dc4.png" alt="Phim 1">
+    <h3>Venom: Kèo Cuối</h3>
+    <p><b>Thể loại:</b> Khoa học, Viễn tưởng<br>
+      <b>Thời lượng:</b> 110 phút<br>
+      </p>
+      <button>MUA VÉ</button>
+</div>
+
+
+
+</div>
+    </section>
+    <!-- Modal hiển thị lịch chiếu -->
+<div id="ticketModal" class="modal">
+  <div class="modal-content">
+      <span class="close">&times;</span>
+      <div class="modal-header">
+      <h2 id="movieTitle" class="model-movie-title">LỊCH CHIẾU - <span id="movieName"></span></h2>
+      <p id="theaterName" class="theater-name">Rạp</p>
+    </div>
+      <div id="dates" class="dates">
+      </div>
+      <div id="showtimes" class="showtimes">
+      </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-container">
+      <div class="footer-section">
+          <img src="images/logo.jpg" alt="Alpha Cinemas" class="footer-logo">
+          <ul>
+              <li><a href="#">Tuyển dụng</a></li>
+              <li><a href="#">Giới thiệu</a></li>
+              <li><a href="#">Liên hệ</a></li>
+              <li><a href="#">F.A.Q</a></li>
+              <li><a href="#">Hoạt động xã hội</a></li>
+              <li><a href="#">Điều khoản sử dụng</a></li>
+              <li><a href="#">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
+              <li><a href="#">Liên hệ quảng cáo</a></li>
+              <li><a href="#">Điều khoản bảo mật</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h2>CỤM RẠP ALPHA</h2>
+          <ul>
+              <li><a href="#">Alpha Cinema Ân Thi, Hưng Yên - Sắp khai trương</a></li>
+              <li><a href="#">Alpha Cinema Đống Đa, Hà Nội - Hotline 0969 874 873</a></li>
+              <li><a href="#">Alpha Cinema Nguyễn Trãi, Hà Nội - Hotline 0358 968 970</a></li>
+              <li><a href="#">Alpha Cinema Cầu Giấy, Hà Nội - Hotline 1900 638 362</a></li>
+              <li><a href="#">Alpha Cinema Hà Đông, Hà Nội - Hotline 0983 474 440</a></li>
+              <li><a href="#">Alpha Cinema Phạm Ngũ Lão, TP Hồ Chí Minh - Hotline 0983 747 173</a></li>
+              <li><a href="#">Alpha Cinema Quang Trung, TP Hồ Chí Minh - Hotline 0983 019 8792</a></li>
+              <li><a href="#">Alpha Cinema Trần Quang Khải, TP Hồ Chí Minh - Hotline 0983 836 827</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+          <ul class="social-icons">
+            <li><a class="facebook" href="#">Facebook</a></li>
+            <li><a class="youtube" href="#">YouTube</a></li>
+            <li><a class="zalo" href="#">Zalo</a></li>
+            <li><a class="instagram" href="#">Instagram</a></li>
+          </ul>
+      </div>
+      <div class="footer-section">
+          <h2>LIÊN HỆ</h2>
+            <h4 class="no-margin">CÔNG TY CỔ PHẦN BETA MEDIA</h4>
+            <h6>Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội</h6>
+            <h6>Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, phường Giáp Bát, quận Hoàng Mai, thành phố Hà Nội</h6>
+            <h6>Hotline: 1900 636807 / 0934632682</h6>
+            <h6>Email: mkt@betacinemas.vn</h6>
+            <h4><strong>Liên hệ hợp tác kinh doanh:</strong></h4>
+            <h4>Hotline: 1800 646 420</h4>
+            <h4>Email: bachtx@betagroup.vn</h4>
+      </div>
+</footer>
+<footer class="footer2">
+  <p>&copy; 2024 BUI TRONG DAT. MSV:232630981</p>
+</footer>
+<script src="phim.js">
+    
+
+</script>
+</body>
+</html>

@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="beta.css">
-    
+    <link rel="stylesheet" href="css/alpha.css">
+    <link rel="stylesheet" href="css/beta.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="shortcut icon" type="image/icon" href="img/icon.ico"/>
+
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Giá vé</title>
     <script>
         function updateInfo() {
             const selectedOption = document.getElementById("rap").selectedOptions[0];
@@ -23,7 +29,7 @@
 </head>
 <body>
     <header>
-        <a href="home.html" target="display"><img src="logo.jpg" alt="alphacinema" class="logo"></a>
+        <a href="home.html" target="display"><img src="images/logo.jpg" alt="alphacinema" class="logo"></a>
         <form>
             <select id="rap" onchange="updateInfo()">
                 <option value="">Chọn rạp</option>
@@ -50,9 +56,9 @@
         </nav>
     </header>
 
-    <div class="container">
+    <div class="container" style="margin-top: 70px;">
         <h2 id="ticketPrice">Chọn rạp để xem giá</h2>
-        <img id="cinemaImage" src="placeholder.png" alt="Cinema Image" >
+        <img id="cinemaImage" src="images/placeholder.png" alt="Cinema Image" >
         <div class="row">
             <div id="BodyContent_ctl00_leftPanel" class="col-lg-16">
                 <div class="col-md-16 margin-bottom-35">
@@ -77,73 +83,61 @@
             </iframe>
         </div>
     </div>
-<footer>
-    
-    <div class="container">
-        <div class="row">
-            <!-- Left Column -->
-            <div class="col-md-3 col-sm-16 pre-footer-col">
-              <div class="ecm-panel">
-                <ul class="list-unstyled">
-                  <li>
-                    <a class="site-logo" href="/home.htm">
-                      <img style="width: 120px;" alt="Logo" src="logo.jpg">
-                    </a>
-                  </li>
-                  <!-- Links Section -->
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-3">Tuyển dụng</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-1">Giới thiệu</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-2">Liên hệ</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-4">F.A.Q</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/gioi-thieu/trach-nhiem-xa-hoi-va-cong-dong.htm">Hoạt động xã hội</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-7">Điều khoản sử dụng</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/dieu-khoan/dieu-khoan-thanh-toan.htm">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-8">Liên hệ quảng cáo</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/thong-tin-chung.htm#tab-9">Điều khoản bảo mật</a></li>
-                  <li><i class="fa fa-angle-right"></i><a href="/dieu-khoan/huong-dan-dat-ve-online.htm">Hướng dẫn đặt vé online</a></li>
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <img src="images/logo.jpg" alt="Alpha Cinemas" class="footer-logo">
+                <ul>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Giới thiệu</a></li>
+                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="#">F.A.Q</a></li>
+                    <li><a href="#">Hoạt động xã hội</a></li>
+                    <li><a href="#">Điều khoản sử dụng</a></li>
+                    <li><a href="#">Chính sách thanh toán, đổi trả - hoàn vé</a></li>
+                    <li><a href="#">Liên hệ quảng cáo</a></li>
+                    <li><a href="#">Điều khoản bảo mật</a></li>
                 </ul>
-              </div>
             </div>
-            
-            <!-- Center Column -->
-            <div class="col-md-8 col-sm-16 pre-footer-col">
-              <h2>CỤM RẠP ALPHA</h2>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-angle-right"></i> <a href="/thong-tin-rap/beta-cinemas-vinh-yen-vinh-phuc.htm">Beta Cinemas Vĩnh Yên, Vĩnh Phúc - Sắp khai trương</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="/beta-cinemas-ung-van-khiem-sieu-pham-trong-thoi-gian-toi.htm">Beta Cinemas Ung Văn Khiêm, TP Hồ Chí Minh - Hotline 0969 874 873</a></li>
-                <li><i class="fa fa-angle-right"></i> <a href="/thong-tin-rap/beta-lao-cai.htm">Beta Cinemas Lào Cai - Hotline 0358 968 970</a></li>
-                <!-- Add more locations here as needed -->
-                <li><i class="fa fa-angle-right"></i> <a href="http://onelink.to/zmb6dp">Tải Ứng Dụng Beta Cinemas</a></li>
-              </ul>
+            <div class="footer-section">
+                <h2>CỤM RẠP ALPHA</h2>
+                <ul>
+                    <li><a href="#">Alpha Cinema Ân Thi, Hưng Yên - Sắp khai trương</a></li>
+                    <li><a href="#">Alpha Cinema Đống Đa, Hà Nội - Hotline 0969 874 873</a></li>
+                    <li><a href="#">Alpha Cinema Nguyễn Trãi, Hà Nội - Hotline 0358 968 970</a></li>
+                    <li><a href="#">Alpha Cinema Cầu Giấy, Hà Nội - Hotline 1900 638 362</a></li>
+                    <li><a href="#">Alpha Cinema Hà Đông, Hà Nội - Hotline 0983 474 440</a></li>
+                    <li><a href="#">Alpha Cinema Phạm Ngũ Lão, TP Hồ Chí Minh - Hotline 0983 747 173</a></li>
+                    <li><a href="#">Alpha Cinema Quang Trung, TP Hồ Chí Minh - Hotline 0983 019 8792</a></li>
+                    <li><a href="#">Alpha Cinema Trần Quang Khải, TP Hồ Chí Minh - Hotline 0983 836 827</a></li>
+                    <!-- Thêm các mục khác nếu cần -->
+                </ul>
             </div>
-            
-            <!-- Right Columns -->
-            <div class="col-md-4 col-sm-16 pre-footer-col">
-              <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
-              <ul class="social-icons">
-                <li><a class="facebook" href="https://www.facebook.com/betacinemas/"></a></li>
-                <li><a class="youtube" href="https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw/"></a></li>
-                <li><a class="tiktok" href="https://www.tiktok.com/@beta_cinemas/"></a></li>
-                <li><a class="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
-              </ul>
-              <img style="width: 180px;" alt="Certified" src="dathongbao.png">
+            <div class="footer-section">
+                <h2>KẾT NỐI VỚI CHÚNG TÔI</h2>
+                <ul class="social-icons">
+                  <li><a class="facebook" href="https://www.facebook.com/betacinemas/"></a></li>
+                  <li><a class="youtube" href="https://www.youtube.com/channel/UCGj6uah35-eNiH_2mdubYRw/"></a></li>
+                  <li><a class="tiktok" href="https://www.tiktok.com/@beta_cinemas/"></a></li>
+                  <li><a class="instagram" href="https://www.instagram.com/betacinemas/"></a></li>
+                </ul>
+                <img style="width: 180px;" alt="Certified" src="images/dathongbao.png">
             </div>
-            
-            <div class="col-md-4 col-sm-16 pre-footer-col">
-              <h2>LIÊN HỆ</h2>
-              <h4 class="no-margin">CÔNG TY CỔ PHẦN BETA MEDIA</h4>
-              <h6>Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội</h6>
-              <h6>Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, phường Giáp Bát, quận Hoàng Mai, thành phố Hà Nội</h6>
-              <h6>Hotline: 1900 636807 / 0934632682</h6>
-              <h6>Email: mkt@betacinemas.vn</h6>
-              <h4><strong>Liên hệ hợp tác kinh doanh:</strong></h4>
-              <h4>Hotline: 1800 646 420</h4>
-              <h4>Email: bachtx@betagroup.vn</h4>
+            <div class="footer-section">
+                <h2>LIÊN HỆ</h2>
+                  <h4 class="no-margin" style="">CÔNG TY CỔ PHẦN BETA MEDIA</h4>
+                  <h6>Giấy chứng nhận ĐKKD số: 0106633482 - Đăng ký lần đầu ngày 08/09/2014 tại Sở Kế hoạch và Đầu tư Thành phố Hà Nội</h6>
+                  <h6>Địa chỉ trụ sở: Tầng 3, số 595, đường Giải Phóng, phường Giáp Bát, quận Hoàng Mai, thành phố Hà Nội</h6>
+                  <h6>Hotline: 1900 636807 / 0934632682</h6>
+                  <h6>Email: mkt@betacinemas.vn</h6>
+                  <h4><strong>Liên hệ hợp tác kinh doanh:</strong></h4>
+                  <h4>Hotline: 1800 646 420</h4>
+                  <h4>Email: bachtx@betagroup.vn</h4>
             </div>
-          </div>
-          
-    </div>
-</footer>    
+    </footer>
+    <footer class="footer2">
+        <p>&copy; 2024 DINH VAN VIET HOANG. MSV:232631003</p>
+    </footer>
 </body>
 </html>
   

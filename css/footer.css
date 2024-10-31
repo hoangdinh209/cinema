@@ -1,0 +1,156 @@
+
+  .pre-footer-col {
+    padding: 20px;
+  }
+  
+  .pre-footer-col:first-child {
+    border-right: 1px solid #ddd;
+  }
+footer div.row{
+    display: flex;
+    padding: 0 15px 22px;
+    box-sizing: border-box;
+}
+  ul.list-unstyled {
+    list-style: none;
+    padding: 0;
+    text-decoration: none;
+  }
+  
+  ul.list-unstyled li {
+    margin: 5px 0;
+    text-decoration: none;
+  }
+  
+  ul.list-unstyled li i {
+    margin-right: 10px;
+  }
+  
+  .site-logo img {
+    width: 120px;
+  }
+  footer h2 {
+    font-size: 20px;
+    border-bottom: 3px solid #1e73be;
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+  }
+ footer h2#ticketPrice{
+    font-size: 40px;
+  }
+  
+  .social-icons li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  .social-icons a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: #ddd;
+    border-radius: 5px;
+  }
+  
+  footer img[alt="Certified"] {
+    margin-top: 15px;
+    width: 180px;
+  }
+  .pre-footer-col:last-child h4 {
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  footer h6{
+    margin: 0;
+  }
+  .pre-footer-col:last-child h6 {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+   .footer {
+  margin: 100px;
+  background-color: #f3f1f1;
+  padding: 2rem;
+  border-top: 2px solid #ddd;
+  color: #333;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1 1 22%;
+  min-width: 200px;
+}
+
+.footer-logo {
+  width: 90px;
+  height: 50px;
+  margin-bottom: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #0a5db6;
+}
+
+.social-media {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-certification {
+  max-width: 120px;
+  margin-top: 1rem;
+}
+
+.footer-section p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+.social-icons a {
+    background-color: transparent; /* Loại bỏ màu nền */
+    border: none; /* Loại bỏ viền nếu có */
+    padding: 0; /* Loại bỏ khoảng cách */
+    margin: 0; /* Loại bỏ khoảng cách */
+    display: inline; /* Đảm bảo hiển thị theo dòng chữ */
+}
+.footer2 {
+  position: relative; /* Giữ cố định ở dưới cùng */
+  bottom: 0;
+  width: 100%; /* Chiều rộng toàn bộ */
+  background-color: #dfd1d1;
+  text-align: center; /* Căn giữa nội dung */
+  padding: 5px 0; /* Khoảng cách trên dưới */
+  font-size: 14px; /* Kích thước chữ */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Tạo bóng cho phần footer */
+}
